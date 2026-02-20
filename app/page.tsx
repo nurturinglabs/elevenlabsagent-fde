@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import {
   GraduationCap,
   Stethoscope,
-  UtensilsCrossed,
   Pizza,
   Phone,
   ExternalLink,
@@ -18,14 +17,14 @@ import {
 /* ── Env vars ── */
 const RINGAA_URL = process.env.NEXT_PUBLIC_RINGAA_URL || "#";
 const MEDDO_URL = process.env.NEXT_PUBLIC_MEDDO_URL || "#";
-const ORDRA_URL = process.env.NEXT_PUBLIC_ORDRA_URL || "#";
+
 const DOMINOS_URL = process.env.NEXT_PUBLIC_DOMINOS_URL || "#";
 const AIRTEL_URL = process.env.NEXT_PUBLIC_AIRTEL_URL || "#";
 const RINGAA_GITHUB = process.env.NEXT_PUBLIC_RINGAA_GITHUB || "#";
 const DOMINOS_GITHUB = process.env.NEXT_PUBLIC_DOMINOS_GITHUB || "#";
 const AIRTEL_GITHUB = process.env.NEXT_PUBLIC_AIRTEL_GITHUB || "#";
 const MEDDO_GITHUB = process.env.NEXT_PUBLIC_MEDDO_GITHUB || "#";
-const ORDRA_GITHUB = process.env.NEXT_PUBLIC_ORDRA_GITHUB || "#";
+
 const LINKEDIN_URL = process.env.NEXT_PUBLIC_LINKEDIN_URL || "#";
 const GITHUB_URL = process.env.NEXT_PUBLIC_GITHUB_URL || "#";
 
@@ -79,29 +78,16 @@ const demos = [
     url: MEDDO_URL,
     github: MEDDO_GITHUB,
   },
-  {
-    name: "Ordra",
-    tagline: "Voice Food Ordering System",
-    description:
-      "Voice agent that takes food orders conversationally with live cart updates, menu highlighting, and mock POS integration.",
-    vertical: "F&B / Restaurant",
-    icon: UtensilsCrossed,
-    borderColor: "border-t-amber-500",
-    badgeBg: "bg-amber-50 text-amber-700",
-    url: ORDRA_URL,
-    github: ORDRA_GITHUB,
-  },
 ];
 
 const features = [
-  { label: "Conversational AI Agents", detail: "All 5 apps" },
+  { label: "Conversational AI Agents", detail: "All 4 apps" },
   { label: "Server Tools (Webhooks)", detail: "Real-time data via API" },
   { label: "Client Tools", detail: "Live UI updates mid-conversation" },
   { label: "React SDK Integration", detail: "useConversation hook" },
-  { label: "Multi-Vertical Deployment", detail: "Education, Health, F&B, Telecom" },
+  { label: "Multi-Vertical Deployment", detail: "Telecom, QSR, Education, Healthcare" },
   { label: "Knowledge Base", detail: "School info, menus, patient data" },
   { label: "Tool Orchestration", detail: "Multi-step workflows" },
-  { label: "POS Integration Pattern", detail: "Mock Clover API (Ordra)" },
   { label: "Multilingual Voice", detail: "Hindi/English/Hinglish (Airtel)" },
   { label: "Enterprise Multi-System", detail: "CRM + Billing + Network + Ticketing" },
 ];
@@ -178,13 +164,13 @@ export default function ShowcasePage() {
           {/* Left — Text */}
           <div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight animate-fade-up">
-              Five Voice AI Solutions.
+              Four Voice AI Solutions.
               <br />
               <span className="text-indigo-400">One Platform.</span> Built on ElevenLabs.
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-xl animate-fade-up-delay-1">
-              Building voice AI that solves real problems—from automating school admissions to empowering doctors, streamlining food ordering, handling enterprise customer service, and transforming how businesses interact with customers at scale.
+              Building voice AI that solves real problems—from handling enterprise customer service to streamlining pizza ordering, automating school admissions, and empowering doctors with clinical voice assistants.
             </p>
 
             <p className="mt-12 text-sm text-slate-500 animate-fade-in">
@@ -199,21 +185,18 @@ export default function ShowcasePage() {
               const borderMap: Record<string, string> = {
                 "border-t-blue-500": "border-blue-500/40",
                 "border-t-teal-500": "border-teal-500/40",
-                "border-t-amber-500": "border-amber-500/40",
                 "border-t-red-500": "border-red-500/40",
                 "border-t-rose-500": "border-rose-500/40",
               };
               const glowMap: Record<string, string> = {
                 "border-t-blue-500": "group-hover:shadow-blue-500/20",
                 "border-t-teal-500": "group-hover:shadow-teal-500/20",
-                "border-t-amber-500": "group-hover:shadow-amber-500/20",
                 "border-t-red-500": "group-hover:shadow-red-500/20",
                 "border-t-rose-500": "group-hover:shadow-rose-500/20",
               };
               const iconBgMap: Record<string, string> = {
                 "bg-blue-50 text-blue-700": "bg-blue-500/20 text-blue-300",
                 "bg-teal-50 text-teal-700": "bg-teal-500/20 text-teal-300",
-                "bg-amber-50 text-amber-700": "bg-amber-500/20 text-amber-300",
                 "bg-red-50 text-red-700": "bg-red-500/20 text-red-300",
                 "bg-rose-50 text-rose-700": "bg-rose-500/20 text-rose-300",
               };
@@ -286,7 +269,7 @@ export default function ShowcasePage() {
           <div className="text-center mb-12 reveal">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Architecture</h2>
             <p className="mt-3 text-slate-500">
-              Shared design pattern across all five demos.
+              Shared design pattern across all four demos.
             </p>
           </div>
 
@@ -365,7 +348,7 @@ export default function ShowcasePage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-6">About This Project</h2>
             <div className="space-y-4 text-slate-600">
               <p>
-                I built these five demos to show how ElevenLabs Conversational AI can be deployed as a
+                I built these four demos to show how ElevenLabs Conversational AI can be deployed as a
                 Forward Deployed Engineer across different verticals.
               </p>
               <p>

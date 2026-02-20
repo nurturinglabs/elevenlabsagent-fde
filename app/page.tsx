@@ -32,6 +32,30 @@ const GITHUB_URL = process.env.NEXT_PUBLIC_GITHUB_URL || "#";
 /* ── Data ── */
 const demos = [
   {
+    name: "Airtel AI Support",
+    tagline: "Enterprise Telecom Voice Agent",
+    description:
+      "Voice agent for Airtel's 300M+ subscribers — handles balance checks, network troubleshooting, recharges, and support tickets across Hindi, English, and Hinglish.",
+    vertical: "Telecom",
+    icon: Phone,
+    borderColor: "border-t-rose-500",
+    badgeBg: "bg-rose-50 text-rose-700",
+    url: AIRTEL_URL,
+    github: AIRTEL_GITHUB,
+  },
+  {
+    name: "Domino's Voice Agent",
+    tagline: "Pizza Ordering Voice Demo",
+    description:
+      "Voice-powered pizza ordering experience with a browsable menu, real-time cart updates, and conversational order flow.",
+    vertical: "Quick Service",
+    icon: Pizza,
+    borderColor: "border-t-red-500",
+    badgeBg: "bg-red-50 text-red-700",
+    url: DOMINOS_URL,
+    github: DOMINOS_GITHUB,
+  },
+  {
     name: "Ringaa",
     tagline: "School Admissions Voice Agent",
     description:
@@ -66,30 +90,6 @@ const demos = [
     badgeBg: "bg-amber-50 text-amber-700",
     url: ORDRA_URL,
     github: ORDRA_GITHUB,
-  },
-  {
-    name: "Domino's Voice Agent",
-    tagline: "Pizza Ordering Voice Demo",
-    description:
-      "Voice-powered pizza ordering experience with a browsable menu, real-time cart updates, and conversational order flow.",
-    vertical: "Quick Service",
-    icon: Pizza,
-    borderColor: "border-t-red-500",
-    badgeBg: "bg-red-50 text-red-700",
-    url: DOMINOS_URL,
-    github: DOMINOS_GITHUB,
-  },
-  {
-    name: "Airtel AI Support",
-    tagline: "Enterprise Telecom Voice Agent",
-    description:
-      "Voice agent for Airtel's 300M+ subscribers — handles balance checks, network troubleshooting, recharges, and support tickets across Hindi, English, and Hinglish.",
-    vertical: "Telecom",
-    icon: Phone,
-    borderColor: "border-t-rose-500",
-    badgeBg: "bg-rose-50 text-rose-700",
-    url: AIRTEL_URL,
-    github: AIRTEL_GITHUB,
   },
 ];
 

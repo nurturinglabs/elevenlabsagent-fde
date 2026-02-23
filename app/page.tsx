@@ -7,26 +7,21 @@ import {
   Pizza,
   Phone,
   ExternalLink,
-  Github,
-  Check,
-  ArrowDown,
   Linkedin,
   Waves,
+  Mic,
+  Wrench,
+  Rocket,
+  ChevronRight,
 } from "lucide-react";
 
-/* ── Env vars ── */
-const RINGAA_URL = process.env.NEXT_PUBLIC_RINGAA_URL || "#";
-const MEDDO_URL = process.env.NEXT_PUBLIC_MEDDO_URL || "#";
+/* ── URLs ── */
+const AIRTEL_URL = "https://elevenlabsagent-airtel.vercel.app";
+const DOMINOS_URL = "https://elevenlabsagent-dominos.vercel.app";
+const RINGAA_URL = "https://elevenlabsagent-ringaa.vercel.app";
+const MEDDO_URL = "https://elevenlabsagent-meddo.vercel.app";
 
-const DOMINOS_URL = process.env.NEXT_PUBLIC_DOMINOS_URL || "#";
-const AIRTEL_URL = process.env.NEXT_PUBLIC_AIRTEL_URL || "#";
-const RINGAA_GITHUB = process.env.NEXT_PUBLIC_RINGAA_GITHUB || "#";
-const DOMINOS_GITHUB = process.env.NEXT_PUBLIC_DOMINOS_GITHUB || "#";
-const AIRTEL_GITHUB = process.env.NEXT_PUBLIC_AIRTEL_GITHUB || "#";
-const MEDDO_GITHUB = process.env.NEXT_PUBLIC_MEDDO_GITHUB || "#";
-
-const LINKEDIN_URL = process.env.NEXT_PUBLIC_LINKEDIN_URL || "#";
-const GITHUB_URL = process.env.NEXT_PUBLIC_GITHUB_URL || "#";
+const LINKEDIN_URL = "https://www.linkedin.com/in/umeshjn/";
 
 /* ── Data ── */
 const demos = [
@@ -40,7 +35,6 @@ const demos = [
     borderColor: "border-t-rose-500",
     badgeBg: "bg-rose-50 text-rose-700",
     url: AIRTEL_URL,
-    github: AIRTEL_GITHUB,
   },
   {
     name: "Domino's Voice Agent",
@@ -52,7 +46,6 @@ const demos = [
     borderColor: "border-t-red-500",
     badgeBg: "bg-red-50 text-red-700",
     url: DOMINOS_URL,
-    github: DOMINOS_GITHUB,
   },
   {
     name: "Ringaa",
@@ -64,7 +57,6 @@ const demos = [
     borderColor: "border-t-blue-500",
     badgeBg: "bg-blue-50 text-blue-700",
     url: RINGAA_URL,
-    github: RINGAA_GITHUB,
   },
   {
     name: "Meddo",
@@ -76,31 +68,10 @@ const demos = [
     borderColor: "border-t-teal-500",
     badgeBg: "bg-teal-50 text-teal-700",
     url: MEDDO_URL,
-    github: MEDDO_GITHUB,
   },
 ];
 
-const features = [
-  { label: "Conversational AI Agents", detail: "All 4 apps" },
-  { label: "Server Tools (Webhooks)", detail: "Real-time data via API" },
-  { label: "Client Tools", detail: "Live UI updates mid-conversation" },
-  { label: "React SDK Integration", detail: "useConversation hook" },
-  { label: "Multi-Vertical Deployment", detail: "Telecom, QSR, Education, Healthcare" },
-  { label: "Knowledge Base", detail: "School info, menus, patient data" },
-  { label: "Tool Orchestration", detail: "Multi-step workflows" },
-  { label: "Multilingual Voice", detail: "Hindi/English/Hinglish (Airtel)" },
-  { label: "Enterprise Multi-System", detail: "CRM + Billing + Network + Ticketing" },
-];
-
-const techStack = [
-  "Next.js 16",
-  "TypeScript",
-  "Tailwind CSS v4",
-  "shadcn/ui",
-  "ElevenLabs React SDK",
-  "Recharts",
-  "Vercel",
-];
+const techStack = ["Next.js 16", "TypeScript", "Tailwind v4", "shadcn/ui", "ElevenLabs SDK", "Recharts", "Vercel"];
 
 /* ── Scroll reveal hook ── */
 function useScrollReveal() {
@@ -232,107 +203,91 @@ export default function ShowcasePage() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
       </section>
 
-      {/* FEATURES */}
-      <section className="py-20 px-6 bg-slate-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 reveal">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
-              ElevenLabs Features Demonstrated
-            </h2>
-            <p className="mt-3 text-slate-500">
-              Comprehensive coverage of the Conversational AI platform capabilities.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {features.map((f) => (
-              <div
-                key={f.label}
-                className="reveal feature-item flex items-start gap-3 p-4 rounded-lg bg-white border border-slate-200 hover:border-indigo-200 hover:shadow-sm transition-all"
-              >
-                <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5">
-                  <Check className="w-3.5 h-3.5 text-emerald-600" />
-                </div>
-                <div>
-                  <p className="font-medium text-slate-900 text-sm">{f.label}</p>
-                  <p className="text-xs text-slate-500">{f.detail}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ARCHITECTURE */}
+      {/* HOW IT'S BUILT */}
       <section className="py-20 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 reveal">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Architecture</h2>
-            <p className="mt-3 text-slate-500">
-              Shared design pattern across all four demos.
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14 reveal">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">How It&apos;s Built</h2>
+            <p className="mt-3 text-slate-500 max-w-2xl mx-auto">
+              Every demo uses the ElevenLabs Conversational AI SDK with real-time WebRTC audio,
+              server tools, and client tools that update the UI mid-conversation.
             </p>
           </div>
 
-          <div className="reveal">
-            <div className="relative bg-slate-50 rounded-2xl border border-slate-200 p-8 sm:p-12 overflow-hidden">
-              {/* Top: ElevenLabs Agent */}
-              <div className="flex justify-center mb-8">
-                <div className="bg-indigo-600 text-white rounded-xl px-6 py-4 text-center shadow-lg">
-                  <p className="font-bold text-sm">ElevenLabs Agent</p>
-                  <p className="text-xs text-indigo-200 mt-1">STT &rarr; LLM &rarr; TTS</p>
-                </div>
+          {/* Three pillars */}
+          <div className="reveal grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+            <div className="rounded-xl border border-slate-200 p-6">
+              <div className="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center mb-4">
+                <Mic className="w-5 h-5 text-indigo-600" />
               </div>
-
-              {/* Arrows */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div className="flex flex-col items-center gap-2 p-4 rounded-lg border border-slate-200 bg-white">
-                  <div className="text-xs font-medium text-slate-500 uppercase tracking-wider">Server Tools</div>
-                  <div className="w-px h-4 bg-slate-300" />
-                  <div className="bg-slate-900 text-white rounded-lg px-4 py-3 text-center w-full">
-                    <p className="font-medium text-sm">Next.js API Routes</p>
-                    <p className="text-xs text-slate-400 mt-0.5">Deployed on Vercel</p>
-                  </div>
-                </div>
-                <div className="flex flex-col items-center gap-2 p-4 rounded-lg border border-slate-200 bg-white">
-                  <div className="text-xs font-medium text-slate-500 uppercase tracking-wider">Client Tools</div>
-                  <div className="w-px h-4 bg-slate-300" />
-                  <div className="bg-emerald-600 text-white rounded-lg px-4 py-3 text-center w-full">
-                    <p className="font-medium text-sm">React State Updates</p>
-                    <p className="text-xs text-emerald-200 mt-0.5">Live UI in Browser</p>
-                  </div>
-                </div>
+              <h3 className="font-bold text-slate-900 mb-2">ElevenLabs Conversational AI</h3>
+              <ul className="space-y-1.5 text-sm text-slate-500">
+                <li>Voice agents across 4 industry verticals</li>
+                <li>Real-time audio streaming via WebRTC</li>
+                <li>Contextual updates sent mid-conversation</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-slate-200 p-6">
+              <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center mb-4">
+                <Wrench className="w-5 h-5 text-emerald-600" />
               </div>
-
-              {/* WebRTC line */}
-              <div className="flex items-center gap-3 justify-center mb-8">
-                <div className="h-px flex-1 bg-slate-300" />
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200 text-xs text-slate-600 font-medium">
-                  <Waves className="w-3.5 h-3.5" />
-                  WebRTC Audio
-                </div>
-                <div className="h-px flex-1 bg-slate-300" />
+              <h3 className="font-bold text-slate-900 mb-2">Server + Client Tools</h3>
+              <ul className="space-y-1.5 text-sm text-slate-500">
+                <li>Server tools — agent calls Next.js API routes for data</li>
+                <li>Client tools — agent triggers React state updates live</li>
+                <li>Domain data: menus, patient records, CRM, school info</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-slate-200 p-6">
+              <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
+                <Rocket className="w-5 h-5 text-amber-600" />
               </div>
+              <h3 className="font-bold text-slate-900 mb-2">Full-Stack Apps</h3>
+              <ul className="space-y-1.5 text-sm text-slate-500">
+                <li>Complete UIs — dashboards, records, order flows</li>
+                <li>25+ API routes across all demos</li>
+                <li>4 live deployments on Vercel</li>
+              </ul>
+            </div>
+          </div>
 
-              {/* Bottom: User Browser */}
-              <div className="flex justify-center">
-                <div className="bg-white border-2 border-slate-300 rounded-xl px-6 py-4 text-center">
-                  <p className="font-bold text-sm text-slate-900">User&apos;s Browser</p>
-                  <p className="text-xs text-slate-500 mt-1 font-mono">@elevenlabs/react SDK</p>
+          {/* Architecture flow */}
+          <div className="reveal rounded-xl bg-slate-50 border border-slate-200 p-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0">
+              <div className="bg-white border-2 border-slate-300 rounded-lg px-4 py-2.5 text-center">
+                <p className="font-semibold text-xs text-slate-900">Browser</p>
+                <p className="text-[10px] text-slate-400 font-mono">@elevenlabs/react</p>
+              </div>
+              <ChevronRight className="w-5 h-5 text-slate-300 hidden sm:block" />
+              <div className="flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-white border border-slate-200">
+                <Waves className="w-3.5 h-3.5 text-slate-400" />
+                <span className="text-xs font-medium text-slate-600">WebRTC</span>
+              </div>
+              <ChevronRight className="w-5 h-5 text-slate-300 hidden sm:block" />
+              <div className="bg-indigo-600 text-white rounded-lg px-5 py-2.5 text-center">
+                <p className="font-bold text-sm">ElevenLabs Agent</p>
+                <p className="text-[10px] text-indigo-200">STT + LLM + TTS</p>
+              </div>
+              <ChevronRight className="w-5 h-5 text-slate-300 hidden sm:block" />
+              <div className="flex items-center gap-3">
+                <div className="bg-slate-900 text-white rounded-lg px-4 py-2.5 text-center">
+                  <p className="font-semibold text-xs">Server Tools</p>
+                  <p className="text-[10px] text-slate-400">Next.js API</p>
+                </div>
+                <div className="bg-emerald-600 text-white rounded-lg px-4 py-2.5 text-center">
+                  <p className="font-semibold text-xs">Client Tools</p>
+                  <p className="text-[10px] text-emerald-200">React State</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* TECH STACK */}
-      <section className="py-12 px-6 bg-slate-50 border-y border-slate-200">
-        <div className="max-w-4xl mx-auto">
-          <div className="reveal flex flex-wrap items-center justify-center gap-3">
+          {/* Tech stack */}
+          <div className="reveal flex flex-wrap items-center justify-center gap-2 mt-8">
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 rounded-full bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-indigo-300 hover:text-indigo-700 transition-colors"
+                className="px-3 py-1.5 rounded-full bg-slate-100 text-xs font-medium text-slate-600"
               >
                 {tech}
               </span>
@@ -341,58 +296,36 @@ export default function ShowcasePage() {
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-2xl mx-auto">
-          <div className="reveal">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">About This Project</h2>
-            <div className="space-y-4 text-slate-600">
-              <p>
-                I built these four demos to show how ElevenLabs Conversational AI can be deployed as a
-                Forward Deployed Engineer across different verticals.
-              </p>
-              <p>
-                Each app demonstrates the full FDE workflow: understanding client needs, designing voice agents
-                with the right tools, building robust integrations, and shipping production-quality solutions.
-              </p>
-            </div>
-            <div className="mt-8 pt-6 border-t border-slate-200">
-              <p className="text-slate-900 font-semibold">&mdash; Umesh</p>
-              <p className="text-sm text-slate-500 mt-1">
-                Applied for: Forward Deployed Engineer &mdash; Software Engineer
-              </p>
-              <div className="flex gap-3 mt-4">
-                <a
-                  href={LINKEDIN_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium transition-colors"
-                >
-                  <Linkedin className="w-4 h-4" />
-                  LinkedIn
-                </a>
-                <a
-                  href={GITHUB_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 text-sm font-medium transition-colors"
-                >
-                  <Github className="w-4 h-4" />
-                  GitHub
-                </a>
-              </div>
-            </div>
+      {/* ABOUT + FOOTER — combined into one dark section */}
+      <section className="py-16 px-6 bg-slate-900">
+        <div className="max-w-3xl mx-auto text-center reveal">
+          <p className="text-slate-300 leading-relaxed">
+            Four demos, four verticals — built to show how ElevenLabs Conversational AI
+            ships production-grade voice solutions from day one.
+            Each app covers the full FDE workflow: scoping client needs, designing agents,
+            integrating tools, and deploying.
+          </p>
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <span className="text-white font-semibold">&mdash; Umesh</span>
+            <span className="text-slate-600">&middot;</span>
+            <span className="text-sm text-slate-400">FDE Application</span>
+            <span className="text-slate-600">&middot;</span>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-indigo-400 hover:text-indigo-300 font-medium transition-colors"
+            >
+              <Linkedin className="w-4 h-4" />
+              LinkedIn
+            </a>
           </div>
+          <p className="mt-10 text-xs text-slate-600">
+            Built with <span className="text-red-400">&hearts;</span> and{" "}
+            <span className="text-indigo-400 font-medium">ElevenLabs</span> &middot; 2026
+          </p>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <footer className="py-8 px-6 bg-slate-900 text-center">
-        <p className="text-sm text-slate-400">
-          Built with <span className="text-red-400">&hearts;</span> and{" "}
-          <span className="text-indigo-400 font-medium">ElevenLabs</span> &middot; 2026
-        </p>
-      </footer>
     </div>
   );
 }
